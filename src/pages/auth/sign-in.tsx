@@ -6,6 +6,7 @@ import { toast } from 'sonner'
 
 import { useForm } from 'react-hook-form';
 import { z } from 'zod'
+import { Link } from "react-router-dom";
 
 const signInForm = z.object({
   email: z.string().email()
@@ -26,6 +27,14 @@ export function SignIn() {
   return (
     <>
     <div className="p-8">
+      <div>
+        <Button variant='ghost' asChild className="absolute right-8 top-8">
+          <Link to='/sign-up'>
+              Novo estabelecimento
+          </Link>
+        </Button>
+      </div>
+
       <div className="flex w-[350px] flex-col justify-center gap-6">
         <div className="flex flex-col gap-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
