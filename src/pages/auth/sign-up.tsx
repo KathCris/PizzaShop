@@ -29,7 +29,7 @@ export function SignUp() {
 
     toast.success('Cadastrado com sucesso!')
 
-    navegate('/sign-in')
+    navegate('/')
   }
 
   return (
@@ -37,7 +37,7 @@ export function SignUp() {
     <div className="p-8">
     <div>
         <Button variant='ghost' asChild className="absolute right-8 top-8">
-          <Link to='/sign-in'>
+          <Link to='/'>
               Fazer login
           </Link>
         </Button>
