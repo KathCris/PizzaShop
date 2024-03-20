@@ -2,8 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ArrowRight, Search, X } from "lucide-react";
-import { useEffect } from "react";
-
 
 
 export function Orders() {
@@ -19,20 +17,21 @@ export function Orders() {
         <Input placeholder="Nome do cliente" className="h-8 w-[320px]" />
       </form>
 
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[64px]" ></TableHead>
-            <TableRow className="w-[140px]">Identificador</TableRow>
-            <TableRow className="w-[180px]">Realizado há</TableRow>
-            <TableRow className="w-[140px]">Status</TableRow>
-            <TableRow>Cliente</TableRow>
-            <TableRow className="w-[140px]">Total de pedido</TableRow>
-            <TableRow className="w-[164px]"></TableRow>
-            <TableRow className="w-[132px]"></TableRow>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
+      <div className="border rounded-md">
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="w-[64px]" ></TableHead>
+              <TableHead className="w-[140px]">Identificador</TableHead>
+              <TableHead className="w-[180px]">Realizado há</TableHead>
+              <TableHead className="w-[140px]">Status</TableHead>
+              <TableHead>Cliente</TableHead>
+              <TableHead className="w-[140px]">Total de pedido</TableHead>
+              <TableHead className="w-[164px]"></TableHead>
+              <TableHead className="w-[132px]"></TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
           <TableRow>
             <TableCell>
               <Button variant="outline" size='xs'>
@@ -64,8 +63,9 @@ export function Orders() {
               <Button variant='ghost' size='xs'><X  className="mr-2 h-3 w-3"/> Cancelar</Button>
             </TableCell>
           </TableRow>
-        </TableBody>
-      </Table>
+          </TableBody>
+        </Table>
+      </div>
     </div>
 
     </>

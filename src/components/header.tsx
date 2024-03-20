@@ -13,7 +13,8 @@ export function Header() {
 
         <Separator orientation="vertical" className="h-6" />
 
-        <nav className="flex items-center space-x-4 lg:space-x-6">
+        <nav className="flex w-full justify-between">
+          <div className="flex items-center space-x-4 lg:space-x-6">
             <NavLink to='/'>
               <Home className="h-4 w-4" />
               Home
@@ -22,13 +23,16 @@ export function Header() {
               <UtensilsCrossed className="h-4 w-4" />
               Pedidos
             </NavLink>
+          </div>
 
+          <div className="flex items-center space-x-4 lg:space-x-6">
             <div className="ml-auto flex items-center gap-2">
               <ThemeToggle /> 
             </div>
             <div className="ml-auto flex items-center gap-2">
               <AccountMenu /> 
             </div>
+          </div>
         </nav>
 
       </div>

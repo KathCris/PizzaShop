@@ -9,8 +9,8 @@ export function App() {
   return (
     <>
     <ThemeProvider storageKey='pizzashop-theme' defaultTheme='dark'>
-      <RouterProvider router={router} />
       <Toaster richColors />
+      <RouterProvider router={router} />
     </ThemeProvider>
     </>
   )
