@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowRight, Search, X } from "lucide-react";
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { OrdersTableRow } from "./order-table-row";
+import { OrdersTableFlters } from "./order-table-filters";
 
 
 export function Orders() {
@@ -12,10 +11,7 @@ export function Orders() {
     </div>
 
     <div className="space-y-2.5">
-      <form className="flex items-center gap-2">
-        <span className="text-sm font-semibold">Filtros:</span>
-        <Input placeholder="Nome do cliente" className="h-8 w-[320px]" />
-      </form>
+      <OrdersTableFlters />
 
       <div className="border rounded-md">
         <Table>
@@ -32,37 +28,11 @@ export function Orders() {
             </TableRow>
           </TableHeader>
           <TableBody>
-          <TableRow>
-            <TableCell>
-              <Button variant="outline" size='xs'>
-                <Search className="h-3 w-3" />
-              </Button>
-            </TableCell>
-            <TableCell className="font-mono text-xs font-medium">
-              65256sdf5dfs
-            </TableCell>
-            <TableCell className="text-muted-foreground">
-                  Há 15 minutos
-            </TableCell>
-            <TableCell>
-              <div className="flex items-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-slate-400"/>
-                <span className="font-medium text-muted-foreground">Pendente</span>
-              </div>
-            </TableCell>
-            <TableCell className="font-medium">
-              Kathleen Santos
-            </TableCell>
-            <TableCell className="font-medium">
-              R$ 149,90
-            </TableCell>
-            <TableCell>
-              <Button variant='outline' size='xs'> <ArrowRight className="mr-2 h-3 w-3" /> Aprovar</Button>
-            </TableCell>
-            <TableCell>
-              <Button variant='ghost' size='xs'><X  className="mr-2 h-3 w-3"/> Cancelar</Button>
-            </TableCell>
-          </TableRow>
+          {Array.from({length: 10}).map((_, i) => {
+            return(
+              <OrdersTableRow key={i} />
+            )
+          })}
           </TableBody>
         </Table>
       </div>
